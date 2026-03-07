@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "SELECT u.*, r.nombre_rol
             FROM usuario u
             INNER JOIN rol r ON u.id_rol = r.id_rol
-            WHERE u.username = ? 
+            WHERE u.username = ?
               AND u.password = ?
               AND u.estado = 'activo'
             LIMIT 1";
@@ -24,13 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($usuario) {
-        $_SESSION["id_usuario"] = $usuario["id_usuario"];
-        $_SESSION["usuario"] = $usuario["nombre"];
-        $_SESSION["username"] = $usuario["username"];
-        $_SESSION["correo"] = $usuario["correo"];
-        $_SESSION["rol"] = $usuario["nombre_rol"];
-        $_SESSION["id_rol"] = $usuario["id_rol"];
-        $_SESSION["id_empresa"] = $usuario["id_empresa"];
+        $_SESSION["id_usuario"]     = $usuario["id_usuario"];
+        $_SESSION["usuario"]        = $usuario["nombre"];
+        $_SESSION["username"]       = $usuario["username"];
+        $_SESSION["correo"]         = $usuario["correo"];
+        $_SESSION["rol"]            = $usuario["nombre_rol"];
+        $_SESSION["id_rol"]         = $usuario["id_rol"];
+        $_SESSION["id_empresa"]     = $usuario["id_empresa"];
+        $_SESSION["id_datacenter"]  = $usuario["id_datacenter"];
+        $_SESSION["id_nodo"]        = $usuario["id_nodo"];
+        $_SESSION["id_equipo"]      = $usuario["id_equipo"];
 
         header("Location: ../pages/dashboard.php");
         exit;
@@ -38,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: ../index.php?error=1");
         exit;
     }
-} else {
-    header("Location: ../index.php");
-    exit;
 }
+
+header("Location: ../index.php");
+exit;
 ?>

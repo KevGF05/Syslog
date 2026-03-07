@@ -1,6 +1,7 @@
 <?php
 require_once "../includes/auth.php";
 require_once "../includes/db.php";
+requireModuleAccess("usuarios");
 
 $usuarios = $pdo->query("SELECT id_usuario, nombre FROM usuario ORDER BY nombre")->fetchAll(PDO::FETCH_ASSOC);
 $alertas = $pdo->query("SELECT id_alerta, nombre_alerta FROM alerta ORDER BY nombre_alerta")->fetchAll(PDO::FETCH_ASSOC);

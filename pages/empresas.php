@@ -1,7 +1,7 @@
 <?php
 require_once "../includes/auth.php";
 require_once "../includes/db.php";
-
+requireModuleAccess("empresas");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = trim($_POST["nombre"]);
     $descripcion = trim($_POST["descripcion"]);
