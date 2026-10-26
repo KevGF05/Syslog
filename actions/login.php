@@ -15,15 +15,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             FROM usuario u
             INNER JOIN rol r ON u.id_rol = r.id_rol
             WHERE u.username = ?
-              AND u.password = ?
               AND u.estado = 'activo'
             LIMIT 1";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$username, $password]);
+    $stmt->execute([$username]);
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $valido = false;
+
     if ($usuario) {
+        if (password_verify($password, $usuario["password"])) {
+            $valido = true;
+        } elseif (password_get_info($usuario["password"])["algo"] === null && hash_equals($usuario["password"], $password)) {
+            // Usuario antiguo con la contraseña en texto plano: se cifra al iniciar sesión
+            $valido = true;
+            $update = $pdo->prepare("UPDATE usuario SET password = ? WHERE id_usuario = ?");
+            $update->execute([password_hash($password, PASSWORD_DEFAULT), $usuario["id_usuario"]]);
+        }
+    }
+
+    if ($valido) {
+        session_regenerate_id(true);
+
         $_SESSION["id_usuario"]     = $usuario["id_usuario"];
         $_SESSION["usuario"]        = $usuario["nombre"];
         $_SESSION["username"]       = $usuario["username"];

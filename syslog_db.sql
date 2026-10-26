@@ -504,18 +504,18 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `id_rol`, `id_empresa`, `nombre_empresa`, `id_datacenter`, `id_nodo`, `id_equipo`, `nombre`, `correo`, `telefono`, `username`, `password`, `estado`, `fecha_creacion`) VALUES
-(1, 1, NULL, NULL, NULL, NULL, NULL, 'Administrador General', 'admin@syslog.com', '9999-0001', 'admin', '123456', 'activo', '2026-03-06 20:39:34'),
-(2, 2, 1, 'NetOne Telecom', NULL, NULL, NULL, 'Laura Mendoza', 'laura.mendoza@netone.com', '9999-0002', 'empresa1', '111111', 'activo', '2026-03-06 20:39:34'),
-(3, 2, 2, 'InfraCloud Honduras', NULL, NULL, NULL, 'Carlos Figueroa', 'carlos.figueroa@infracloud.com', '9999-0003', 'empresa2', '222222', 'activo', '2026-03-06 20:39:34'),
-(4, 3, 1, 'NetOne Telecom', 1, NULL, NULL, 'Andrea Pineda', 'andrea.pineda@netone.com', '9999-0004', 'dcuser1', '333333', 'activo', '2026-03-06 20:39:34'),
-(5, 3, 2, 'InfraCloud Honduras', 3, NULL, NULL, 'Jorge Rivera', 'jorge.rivera@infracloud.com', '9999-0005', 'dcuser2', '444444', 'activo', '2026-03-06 20:39:34'),
-(6, 4, 1, 'NetOne Telecom', 1, 1, NULL, 'Marvin Salgado', 'marvin.salgado@netone.com', '9999-0006', 'nodouser1', '555555', 'activo', '2026-03-06 20:39:34'),
-(7, 4, 3, 'Conectividad Regional', 4, 5, NULL, 'Daniela Flores', 'daniela.flores@regional.com', '9999-0007', 'nodouser2', '666666', 'activo', '2026-03-06 20:39:34'),
-(8, 5, 1, 'NetOne Telecom', 1, 1, 1, 'Kevin Torres', 'kevin.torres@netone.com', '9999-0008', 'equipouser1', '777777', 'activo', '2026-03-06 20:39:34'),
-(9, 5, 2, 'InfraCloud Honduras', 3, 4, 6, 'Sofía García', 'sofia.garcia@infracloud.com', '9999-0009', 'equipouser2', '888888', 'activo', '2026-03-06 20:39:34'),
-(10, 6, 1, 'NetOne Telecom', NULL, NULL, NULL, 'Operador NOC 1', 'operador1@syslog.com', '9999-0010', 'operador1', '999999', 'activo', '2026-03-06 20:39:34'),
-(11, 6, 1, 'NetOne Telecom', NULL, NULL, NULL, 'Operador NOC 2', 'operador2@syslog.com', '9999-0011', 'operador2', '101010', 'activo', '2026-03-06 20:39:34'),
-(12, 6, 3, 'Conectividad Regional', NULL, NULL, NULL, 'Monitoreo Regional', 'regional@syslog.com', '9999-0012', 'regional1', '121212', 'activo', '2026-03-06 20:39:34');
+(1, 1, NULL, NULL, NULL, NULL, NULL, 'Administrador General', 'admin@syslog.com', '9999-0001', 'admin', '$2y$10$1jG56OFRvGLV4h5WT7/Z0uZRUZ.rcTnV.4PVYUGPtt9H/bvCjzRGC', 'activo', '2026-03-06 20:39:34'),
+(2, 2, 1, 'NetOne Telecom', NULL, NULL, NULL, 'Laura Mendoza', 'laura.mendoza@netone.com', '9999-0002', 'empresa1', '$2y$10$skgz6cEBm4LDrE44ky8.beOqJN/gOatYRf3NiodJxAxBTiaiBfKjW', 'activo', '2026-03-06 20:39:34'),
+(3, 2, 2, 'InfraCloud Honduras', NULL, NULL, NULL, 'Carlos Figueroa', 'carlos.figueroa@infracloud.com', '9999-0003', 'empresa2', '$2y$10$qgEPSQQxPlalBTJcm23NeOMgwvOYKDGxJBq2laEz81Fe37kSy54yS', 'activo', '2026-03-06 20:39:34'),
+(4, 3, 1, 'NetOne Telecom', 1, NULL, NULL, 'Andrea Pineda', 'andrea.pineda@netone.com', '9999-0004', 'dcuser1', '$2y$10$S7Qb98.CKrZ9s2vyYT7V6.hOjw2IVnIH0OJp6vHIJD239R8BIlxUy', 'activo', '2026-03-06 20:39:34'),
+(5, 3, 2, 'InfraCloud Honduras', 3, NULL, NULL, 'Jorge Rivera', 'jorge.rivera@infracloud.com', '9999-0005', 'dcuser2', '$2y$10$mfTSRQKAOz6JkgFYYJ7wmeYvGePzk/nqsFI749Ii76z/5gN7PdkzW', 'activo', '2026-03-06 20:39:34'),
+(6, 4, 1, 'NetOne Telecom', 1, 1, NULL, 'Marvin Salgado', 'marvin.salgado@netone.com', '9999-0006', 'nodouser1', '$2y$10$OndGhY9zXGLpmjQt5ygBUu8MivpGheWZAWS8.GKotPThkfp8.0Cii', 'activo', '2026-03-06 20:39:34'),
+(7, 4, 3, 'Conectividad Regional', 4, 5, NULL, 'Daniela Flores', 'daniela.flores@regional.com', '9999-0007', 'nodouser2', '$2y$10$iseChMo7W2oxGampP9MtpO82GAsrX4oMLTbr4rSyGx4zvLxzXwkoi', 'activo', '2026-03-06 20:39:34'),
+(8, 5, 1, 'NetOne Telecom', 1, 1, 1, 'Kevin Torres', 'kevin.torres@netone.com', '9999-0008', 'equipouser1', '$2y$10$QrlymGRiKc6pA1tIgEL1oez4PjBTKjqKidvHUjrkb./RksbNqOs8m', 'activo', '2026-03-06 20:39:34'),
+(9, 5, 2, 'InfraCloud Honduras', 3, 4, 6, 'Sofía García', 'sofia.garcia@infracloud.com', '9999-0009', 'equipouser2', '$2y$10$XXbrLD5x0ey/6a3WD6.zbO0aJchSYg6FBsNPdItMNH9m7LHTLj0jm', 'activo', '2026-03-06 20:39:34'),
+(10, 6, 1, 'NetOne Telecom', NULL, NULL, NULL, 'Operador NOC 1', 'operador1@syslog.com', '9999-0010', 'operador1', '$2y$10$kzLGMHOgAuX6tpp4E3mLdeX/Ju3gd/wHUpZ1487zEM59cQEdOwbGq', 'activo', '2026-03-06 20:39:34'),
+(11, 6, 1, 'NetOne Telecom', NULL, NULL, NULL, 'Operador NOC 2', 'operador2@syslog.com', '9999-0011', 'operador2', '$2y$10$I/KksoZjsuLxNV7qFdHd6uRFcJQ2WHTtWOYBbSa95Yty/YVgEN5aq', 'activo', '2026-03-06 20:39:34'),
+(12, 6, 3, 'Conectividad Regional', NULL, NULL, NULL, 'Monitoreo Regional', 'regional@syslog.com', '9999-0012', 'regional1', '$2y$10$sYkU5pE7ph3zXsBI9PdYDOlFkHQU/bnKWu.KlFvz6Epw0bxiZhzay', 'activo', '2026-03-06 20:39:34');
 
 --
 -- Índices para tablas volcadas

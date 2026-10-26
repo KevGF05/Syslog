@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $correo,
         $telefono,
         $username,
-        $password,
+        password_hash($password, PASSWORD_DEFAULT),
         $estado
     ]);
 
@@ -188,7 +188,7 @@ $usuarios = $pdo->query("
 
                     <div class="form-group">
                         <label>Contraseña</label>
-                        <input type="text" name="password" required>
+                        <input type="password" name="password" required>
                     </div>
 
                     <div class="form-group">
